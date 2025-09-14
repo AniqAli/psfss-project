@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #00281A;
   --foreground: #171717;
 }
 
@@ -22,5 +22,11 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-aptos) !important;
+}
+
+nav .active {
+  border: 1px solid #43E1A9;
+  border-radius: 11px;
+  background: rgb(67 225 169 / 6%);
 }
