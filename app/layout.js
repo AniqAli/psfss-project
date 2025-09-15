@@ -30,8 +30,8 @@ const aptos = localFont({
 });
 
 export const metadata = {
-  title: "Home | Private File Sharing Sysytem",
-  description: "Home | Private File Sharing Sysytem",
+  title: "Aerialink Cloud",
+  description: "Aerialink Cloud",
 };
 
 export default function RootLayout({ children }) {
@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
         className={`${aptos.variable} antialiased`}
       >
         <Header />
-        <div className="max-w-7xl md:px-6 px-4 lg:px-0">
+        <div className="max-w-7xl md:px-6 px-4 xl:px-0 m-auto">
           {children}
         </div>
       </body>

@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --breakpoint-middle-res: 1024px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,4 +30,12 @@ nav .active {
   border: 1px solid #43E1A9;
   border-radius: 11px;
   background: rgb(67 225 169 / 6%);
+}
+
+body:has(.home-page) {
+  background-image: url('/images/home-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
 }
