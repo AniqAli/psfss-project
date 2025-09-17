@@ -71,7 +71,6 @@ jobs:
     if: github.event_name == 'workflow_dispatch'
     environment:
       name: production
-      url: ${{ secrets.ARGOCD_APP_URL }} # Optional: URL to your ArgoCD application
     steps:
       - name: Checkout manifest repository
         uses: actions/checkout@v4
