@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
     Dialog,
     DialogPanel,
@@ -27,24 +27,24 @@ import Link from 'next/link'
 import { navLinks } from '@/constants/constant'
 import { usePathname } from "next/navigation";
 
-const products = [
-    { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-    { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-    { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-    { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-    { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-]
-const callsToAction = [
-    { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-    { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
-
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const pathname = usePathname();
+    const [isSticky, setIsSticky] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsSticky(window.scrollY > 50); // add shadow after 50px scroll
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
-        <header className="bg-transparent xl:mb-15 lg:mb-10 mb-8">
+        <header
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent ${isSticky ? "backdrop-blur-[3px] shadow-md py-1" : "py-3"}`}
+        >
             <nav aria-label="Global" className="mx-auto flex gap-3 max-w-7xl items-center justify-between mt-5 mb-5 md:px-6 px-4 lg:px-4 xl:px-0 middle:px-5">
                 <div className="flex lg:flex-1 w-full xl:min-h-[69px] lg:min-h-[62px] md:min-h-[50px] min-h-[44px]">
                     <Link href="/" className="bg-[#43E1A9] font-bold px-4 xl:text-3xl lg:text-lg py-2 lg:px-7 lg:py-1 xl:px-13 md:px-4 md:py-2 rounded-2xl text-white leading-0 flex justify-between items-center">
@@ -64,14 +64,14 @@ export default function Header() {
                         <Bars3Icon aria-hidden="true" className="size-8" />
                     </button>
                 </div>
-                <PopoverGroup className="hidden lg:flex lg:gap-x-5.5 border-white border-1 rounded-2xl py-2 px-2 items-center bg-[url(/images/header-bg.png)] bg-contain">
+                <PopoverGroup className="hidden lg:flex lg:gap-x-5.5 border-[#43E1A9] border-1 rounded-2xl py-2 px-2 items-center bg-[url(/images/header-bg.png)] bg-contain">
                     {
                         navLinks.map((link) => {
                             const isActive = pathname === link.href;
 
                             if (link.subMenu) {
                                 return (
-                                    <Popover key={link.name} className="relative">
+                                    <Popover key={link.name} className="relative item">
                                         <PopoverButton className="flex px-2.5 py-2 items-center gap-x-1 xl:text-[1.375rem] lg:text-[1rem] font-bold text-[#FDFDFD] outline-0">
                                             {link.name}
                                             <ChevronDownIcon aria-hidden="true" className="size-7 flex-none text-[#FDFDFD]" />
@@ -105,7 +105,7 @@ export default function Header() {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className={`xl:text-[1.375rem] lg:text-[1rem] font-bold px-2.5 py-2 text-[#FDFDFD] dark:text-white outline-0 ${isActive
+                                    className={`item xl:text-[1.375rem] lg:text-[1rem] font-bold px-2.5 py-2 text-[#FDFDFD] dark:text-white outline-0 ${isActive
                                         ? "active"
                                         : ""
                                         }`}
@@ -118,31 +118,19 @@ export default function Header() {
                 </PopoverGroup>
                 <div className='hidden lg:block'><LanguageSelector customClass={'hidden lg:block'} /></div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <Link href="#" className="xl:text-[1.375rem] lg:text-[1rem] flex justify-center items-center font-bold text-[#fdfdfd] border-white border-1 rounded-2xl lg:px-6 xl:px-6.5 py-4 bg-[url(/images/button-bg.png)] bg-cover bg-no-repeat lg:min-h-[62px] xl:min-h-[69px]">
+                    <Link href="#" className="xl:text-[1.375rem] lg:text-[1rem] flex justify-center items-center font-bold text-[#fdfdfd] border-[#43E1A9] border-1 rounded-2xl lg:px-6 xl:px-6.5 py-4 bg-[url(/images/button-bg.png)] bg-cover bg-no-repeat lg:min-h-[62px] xl:min-h-[69px]">
                         Log in
                     </Link>
                 </div>
             </nav>
 
-
-
             <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden border">
                 <div className="fixed inset-0 z-50" />
                 <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto p-6 sm:max-w-full sm:ring-1 sm:ring-gray-900/10 bg-[url(/images/header-bg.png)] bg-contain border-1 border-white backdrop-blur-2xl">
                     <div className="flex items-center justify-between">
-                        <a href="#" className="-m-1.5 p-1.5">
-                            <span className="sr-only">Your Company</span>
-                            <img
-                                alt=""
-                                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                                className="h-8 w-auto dark:hidden"
-                            />
-                            <img
-                                alt=""
-                                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                                className="h-8 w-auto not-dark:hidden"
-                            />
-                        </a>
+                        <Link href="/" className="bg-[#43E1A9] font-bold px-4 text-2xl py-6  rounded-2xl text-white leading-0 flex justify-between items-center">
+                            Logo
+                        </Link>
                         <button
                             type="button"
                             onClick={() => setMobileMenuOpen(false)}
@@ -155,42 +143,48 @@ export default function Header() {
                     <div className="mt-6 flow-root">
                         <div className="-my-6 divide-y divide-gray-500/10 dark:divide-white/10">
                             <div className="space-y-2 py-6">
-                                <Disclosure as="div" className="-mx-3">
-                                    <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">
-                                        Product
-                                        <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" />
-                                    </DisclosureButton>
-                                    <DisclosurePanel className="mt-2 space-y-2">
-                                        {[...products, ...callsToAction].map((item) => (
-                                            <DisclosureButton
-                                                key={item.name}
-                                                as="a"
-                                                href={item.href}
-                                                className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5"
+                                {
+                                    navLinks.map((link) => {
+                                        const isActive = pathname === link.href;
+
+                                        if (link.subMenu) {
+                                            return (
+                                                <Disclosure as="div" className="-mx-3" key={link.name}>
+                                                    <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3  xl:text-[1.375rem] lg:text-[1rem] font-bold text-[#FDFDFD]">
+                                                        {link.name}
+                                                        <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" />
+                                                    </DisclosureButton>
+                                                    <DisclosurePanel className="mt-2 space-y-2">
+                                                        {link.subMenu.map((item) => (
+
+                                                            <DisclosureButton
+                                                                key={item.name}
+                                                                as="a"
+                                                                href={item.href}
+                                                                className="block rounded-lg py-2 pr-3 pl-6 text-[#FDFDFD] dark:text-white outline-0 text-[0.90rem] font-bold"
+                                                            >
+                                                                {item.name}
+                                                            </DisclosureButton>
+                                                        ))}
+                                                    </DisclosurePanel>
+                                                </Disclosure>
+                                            );
+                                        }
+
+                                        return (
+                                            <Link
+                                                key={link.name}
+                                                href={link.href}
+                                                className={`-mx-3 block xl:text-[1.375rem] lg:text-[1rem] font-bold px-2.5 py-2 text-[#FDFDFD] dark:text-white outline-0 ${isActive
+                                                    ? "active"
+                                                    : ""
+                                                    }`}
                                             >
-                                                {item.name}
-                                            </DisclosureButton>
-                                        ))}
-                                    </DisclosurePanel>
-                                </Disclosure>
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5"
-                                >
-                                    Features
-                                </a>
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5"
-                                >
-                                    Marketplace
-                                </a>
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5"
-                                >
-                                    Company
-                                </a>
+                                                {link.name}
+                                            </Link>
+                                        );
+                                    })
+                                }
                             </div>
                             <hr className='bg-white' />
                             <div className="py-6">

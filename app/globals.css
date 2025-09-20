@@ -39,3 +39,11 @@ body:has(.home-page) {
   background-position: top center;
   background-attachment: fixed;
 }
+
+.customFixed {
+  position: fixed;
+  top: 0;
+  margin: 0 auto;
+  left: 0;
+
+}

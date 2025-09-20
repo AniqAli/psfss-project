@@ -41,7 +41,7 @@ export default function LanguageSelector({ customClass }) {
     return (
         <>
             <div className={customClass}>
-                <PopoverGroup className="lg:flex lg:gap-x-12 border-1 border-white rounded-2xl px-0 py-0 xl:px-2 xl:py-2 lg:px-2 lg:py-2 bg-[url(/images/button-bg.png)] bg-cover bg-no-repeat lg:min-h-[62px] xl:min-h-[69px] min-h-[auto] md:min-h-[50px] flex items-center justify-center">
+                <PopoverGroup className="lg:flex lg:gap-x-12 border-1 border-[#43E1A9] rounded-2xl px-0 py-0 xl:px-2 xl:py-2 lg:px-2 lg:py-2 bg-[url(/images/button-bg.png)] bg-cover bg-no-repeat lg:min-h-[62px] xl:min-h-[69px] min-h-[auto] md:min-h-[50px] flex items-center justify-center">
                     <Popover className="relative ">
                         <PopoverButton className="xl:min-w-[145px] lg:min-w-[84px] min-w-[75px] justify-between flex px-1.5 sm:py-0 xm:px-0 py-2 items-center gap-x-3 xl:text-[1.375rem] lg:text-lg font-bold text-[#fdfdfd] outline-0 uppercase ">
                             <Image src={selectedFlag.src} width={500} height={500} alt='Flag Icon' className='xl:w-9 xl:h-6 lg:w-7 lg:h-5 w-8 h-5 object-cover rounded-md' />
