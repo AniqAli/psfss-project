@@ -35,10 +35,10 @@ export default function Footer() {
                 </div>
                 <div className="col-span-6 xl:col-span-2 lg:col-span-2 text-center">
                     <p className="text-[#43E1A9] text-[16px]">Quick links</p>
-                    <div className="footerLinks flex flex-col">
+                    <div className="footerLinks flex flex-col items-center gap-3">
                         {
                             footerQuickLinks.map( (link) => (
-                                <Link href={link.link} key={link.name}>{link.name}</Link>
+                                <Link href={link.link} key={link.name} className="rounded-full border max-w-[130px] min-w-[130px] text-white">{link.name}</Link>
                             ))
                         }
                     </div>

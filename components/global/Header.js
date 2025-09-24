@@ -43,7 +43,7 @@ export default function Header() {
 
     return (
         <header
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent ${isSticky ? "backdrop-blur-[3px] shadow-md py-1" : "py-3"}`}
+            className={`fixed top-0 left-0 w-full z-[999999] transition-all duration-500 bg-transparent ${isSticky ? "backdrop-blur-[20px] shadow-md py-1" : "py-3"}`}
         >
             <nav aria-label="Global" className="mx-auto flex gap-3 max-w-7xl items-center justify-between mt-5 mb-5 md:px-6 px-4 lg:px-4 xl:px-0 middle:px-5">
                 <div className="flex lg:flex-1 w-full xl:min-h-[69px] lg:min-h-[62px] md:min-h-[50px] min-h-[44px]">
@@ -79,7 +79,7 @@ export default function Header() {
 
                                         <PopoverPanel
                                             transition
-                                            className="absolute left-1/2 z-10 mt-3 w-screen max-w-[100%] -translate-x-1/2 overflow-hidden rounded-xl shadow-lg transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in bg-[url(/images/header-bg.png)] bg-contain border-1 border-white backdrop-blur-[3px]"
+                                            className="absolute left-1/2 z-10 mt-3 w-screen max-w-[100%] -translate-x-1/2 overflow-hidden rounded-xl shadow-lg transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in bg-[url(/images/header-bg.png)] bg-contain border-1 border-white backdrop-blur-[20px]"
                                         >
                                             <div className="p-2">
                                                 {link.subMenu.map((item) => (
