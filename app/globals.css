@@ -36,6 +36,7 @@ body:has(.home-page) {
   background-image: url('/images/home-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-blend-mode: color-dodge;
   background-position: top center;
   background-attachment: fixed;
 }

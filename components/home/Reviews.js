@@ -45,7 +45,7 @@ export default function HomeReviews({ reviews }) {
             {reviews.map((review, index) => (
                 <SwiperSlide
                     key={index}
-                    className="cursor-grab select-none flex flex-col bg-[url(/images/global/reviews-bg.png)] bg-cover bg-no-repeat z-20 rounded-2xl"
+                    className="cursor-grab select-none flex flex-col bg-[url(/images/footer-bg.png)] bg-cover bg-no-repeat z-20 rounded-2xl backdrop-blur-lg"
                     ref={(el) => (slideRefs.current[index] = el)}
                     style={{ height: maxHeight ? `${maxHeight}px` : "auto" }}
                 >
