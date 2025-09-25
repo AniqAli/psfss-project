@@ -10,7 +10,7 @@ export default function GetStartedCards({ heading, text, icon }) {
                         <span className="xl:text-[0.938rem]">{text}</span>
                     </div>
                     <div className="iconWrap w-[35%]">
-                        <Image src={icon} width={500} height={500} className="w-[100px] h-[100px]" alt="Icon" />
+                        <Image src={icon} width={500} height={500} className="w-3xl scale-160" alt="Icon" />
                     </div>
                 </div>
             </div>

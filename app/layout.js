@@ -1,7 +1,11 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import "swiper/css";
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import Header from "@/components/global/Header";
 import Footer from "@/components/global/Footer";
+
 
 const aptos = localFont({
   src: [
