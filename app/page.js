@@ -31,6 +31,12 @@ export default function Home() {
     get_started_card_4_icon: '/icons/home-page/get-started-4.png',
     why_choose_us_heading: 'Why Users Choose Us',
     why_choose_us_para: 'Trusted by users who value privacy, security and simplicity',
+    bottom_section_heading1: 'Love the free version?',
+    bottom_section_para1: 'You\'ll love Premium even more. More features. More freedom.',
+    bottom_section_cta1: 'See What Premium Offers',
+    bottom_section_heading2: 'Want total control and complete privacy?',
+    bottom_section_para2: 'You\'re in the right place, we don\'t sell your personal data.',
+    bottom_section_cta2: 'Start for Free',
   };
 
   const homePageReviews = [
@@ -50,7 +56,7 @@ export default function Home() {
           {homePageContent.banner_heading}
         </h1>
         <div className="xl:max-w-[100%] text-center">
-          <span className="text-[#FDFDFD] text-center font-bold inline-block m-auto xl:text-3xl lg:text-[1.750rem] md:text-[1.250rem] text-[1rem]">
+          <span className="text-[#FDFDFD] text-center font-bold xl:inline-block lg:inline-block md:inline-block hidden m-auto xl:text-3xl lg:text-[1.750rem] md:text-[1.250rem] text-[1rem]">
             <p className="inline-block align-middle">{homePageContent.banner_para1}{""}</p>
             <Image
               src={homePageContent.banner_icon1}
@@ -68,6 +74,9 @@ export default function Home() {
               className="inline-block align-middle xl:w-30 lg:w-30 md:w-25 w-12 xl:mt-[-5rem] lg:mt-[-5rem] md:mt-[-5rem]"
             />{""}
             <p className="inline-block align-middle xl:mt-[-3.5rem] lg:mt-[-3.5rem] md:mt-[-3.5rem]">{homePageContent.banner_para3}{""}</p>
+          </span>
+          <span className="text-[#FDFDFD] text-center font-bold text-[1rem] inline-block xl:hidden lg:hidden md:hidden">
+            <p className="inline-block align-middle mt-2">{homePageContent.banner_para1} {homePageContent.banner_para2} {homePageContent.banner_para3}</p>
           </span>
         </div>
         <div className="flex items-center justify-center xl:gap-20 lg:gap-15 md:gap-10 gap-5 xl:mt-5 lg:mt-5 md:mt-3 mt-5">
@@ -87,30 +96,30 @@ export default function Home() {
       <div className="GetStartedSection xl:mt-8 lg:mt-8 md:mt-6 mt-6">
         <h2 className="text-[#fdfdfd] font-extrabold text-center xl:text-[4rem] lg:text-[4rem] md:text-[3rem] text-[1.9rem]">{homePageContent.get_started_section_heading}</h2>
         <p className="text-[#fdfdfd] text-center font-semibold m-auto xl:text-3xl lg:text-3xl md:text-2xl text-[1.1rem] xl:max-w-[70%] lg:max-w-[90%]">{homePageContent.get_started_section_para}</p>
-        <div className="CardsWrapper flex gap-3 items-stretch xl:mt-9 lg:mt-9 md:mt-6 mt-6">
+        <div className="CardsWrapper flex xl:flex-row lg:flex-row md:flex-row flex-col gap-3 items-stretch xl:mt-9 lg:mt-9 md:mt-6 mt-6">
           <div className="card1 card flex-1 flex flex-col">
-            <div className="heading text-[#43E1A9] font-extrabold xl:text-8xl lg:text-8xl xl:mb-[-1.60rem] lg:mb-[-1.60rem] flex items-center w-full">
+            <div className="heading text-[#43E1A9] font-extrabold xl:text-8xl lg:text-7xl text-5xl xl:mb-[-1.60rem] lg:mb-[-1rem] mb-[-0.750rem] flex items-center w-full">
               01
-              <Image src='/images/home-page/get-started-line.png' width={500} height={500} alt="line" className="xl:w-[200px] lg:w-[125px] object-cover" />
+              <Image src='/images/home-page/get-started-line.png' width={500} height={500} alt="line" className="xl:w-[200px] lg:w-[150px] md:w-[116px] object-cover hidden xl:block lg:block md:block" />
             </div>
             <GetStartedCards heading={homePageContent.get_started_card_1_heading} text={homePageContent.get_started_card_1_text} icon={homePageContent.get_started_card_1_icon} />
           </div>
           <div className="card2 card flex-1 flex flex-col">
-            <div className="heading text-[#43E1A9] font-extrabold xl:text-8xl lg:text-8xl xl:mb-[-1.60rem] lg:mb-[-1.60rem] flex items-center w-full">
+            <div className="heading text-[#43E1A9] font-extrabold xl:text-8xl lg:text-7xl text-5xl xl:mb-[-1.60rem] lg:mb-[-1rem] mb-[-0.750rem] flex items-center w-full">
               02
-              <Image src='/images/home-page/get-started-line.png' width={500} height={500} alt="line" className="xl:w-[200px] lg:w-[125px] object-cover" />
+              <Image src='/images/home-page/get-started-line.png' width={500} height={500} alt="line" className="xl:w-[200px] lg:w-[150px] md:w-[116px] object-cover hidden xl:block lg:block md:block" />
             </div>
             <GetStartedCards heading={homePageContent.get_started_card_2_heading} text={homePageContent.get_started_card_2_text} icon={homePageContent.get_started_card_2_icon} />
           </div>
           <div className="card3 card flex-1 flex flex-col">
-            <div className="heading text-[#43E1A9] font-extrabold xl:text-8xl lg:text-8xl xl:mb-[-1.60rem] lg:mb-[-1.60rem] flex items-center w-full">
+            <div className="heading text-[#43E1A9] font-extrabold xl:text-8xl lg:text-7xl text-5xl xl:mb-[-1.60rem] lg:mb-[-1rem] mb-[-0.750rem] flex items-center w-full">
               03
-              <Image src='/images/home-page/get-started-line.png' width={500} height={500} alt="line" className="xl:w-[200px] lg:w-[125px] object-cover" />
+              <Image src='/images/home-page/get-started-line.png' width={500} height={500} alt="line" className="xl:w-[200px] lg:w-[150px] md:w-[116px] object-cover hidden xl:block lg:block md:block" />
             </div>
             <GetStartedCards heading={homePageContent.get_started_card_3_heading} text={homePageContent.get_started_card_3_text} icon={homePageContent.get_started_card_3_icon} />
           </div>
           <div className="card4 card flex-1 flex flex-col">
-            <div className="heading text-[#43E1A9] font-extrabold xl:text-8xl lg:text-8xl xl:mb-[-1.60rem] lg:mb-[-1.60rem] flex items-center w-full">
+            <div className="heading text-[#43E1A9] font-extrabold xl:text-8xl lg:text-7xl text-5xl xl:mb-[-1.60rem] lg:mb-[-1rem] mb-[-0.750rem] flex items-center w-full">
               04
             </div>
             <GetStartedCards heading={homePageContent.get_started_card_4_heading} text={homePageContent.get_started_card_4_text} icon={homePageContent.get_started_card_4_icon} />
@@ -128,10 +137,37 @@ export default function Home() {
           <div className="z-20 relative">
             <HomeReviews reviews={homePageReviews} />
           </div>
-          <Image src={'/images/home-page/right-pol.png'} width={500} height={500} alt="polygon" className="absolute xl:w-32 lg:w-32 md:w-32 w-16 xl:bottom-[-3rem] lg:bottom-[-3rem] md:bottom-[-3rem] bottom-[-1.5rem] right-[-1.4rem] xl:right-[-2.8rem] lg:right-[-2.8rem] md:right-[-2.8rem] z-10" />
+          <Image src={'/images/home-page/right-pol.png'} width={500} height={500} alt="polygon" className="absolute xl:w-32 lg:w-32 md:w-32 w-16 xl:bottom-[-3rem] lg:bottom-[-3rem] md:bottom-[-3rem] bottom-[-1rem] right-[-0.8rem] xl:right-[-2.8rem] lg:right-[-1.4rem] md:right-[-1rem] z-10" />
         </div>
       </div>
       {/* Why Users Choose Us End */}
+
+      {/* Bottom Section Start */}
+      <div className="">
+        <div className="border-1 border-[#43E1A9] flex xl:flex-row lg:flex-row md:flex-row flex-col items-center rounded-2xl xl:px-8 px-5 xl:py-5 py-5 bg-[url(/images/footer-bg.png)] bg-cover bg-no-repeat backdrop-blur-lg relative overflow-hidden">
+          <Image src={'/images/home-page/g-left-shadow.png'} width={500} height={500} alt="shadow" className="absolute xl:bottom-[6rem] md:bottom-[5rem] bottom-[15rem] left-0 w-[30%] h-[60%] z-10" />
+          <Image src={'/images/home-page/g-bottom-shadow.png'} width={500} height={500} alt="shadow" className="absolute bottom-0 right-0 xl:w-[30%] w-[40%] xl:h-[60%] h-[35%] z-10" />
+          <div className="content w-full xl:max-w-[58%] lg:max-w-[54%] z-20">
+            <div className="xl:max-w-[87%]">
+              <div className="content1 text-[#FDFDFD] flex flex-col">
+                <span className="font-extrabold xl:text-6xl lg:text-5xl text-2xl">{homePageContent.bottom_section_heading1}</span>
+                <span className="xl:text-[1.375rem] text-[1rem]">{homePageContent.bottom_section_para1}</span>
+                <div className="xl:mt-5 mt-5 xl:min-w-[240px] xl:max-w-[240px] lg:min-w-[230px] lg:max-w-[230px] md:min-w-[210px] md:max-w-[210px] min-w-[200px] max-w-[200px] flex"><Button link={'#'} text={homePageContent.bottom_section_cta1} /></div>
+              </div>
+              <hr className="border-[#43E1A9] xl:mt-7 mt-5 xl:mb-7 mb-5" />
+              <div className="content1 text-[#FDFDFD] flex flex-col">
+                <span className="font-extrabold xl:text-6xl lg:text-5xl text-2xl">{homePageContent.bottom_section_heading2}</span>
+                <span className="xl:text-[1.375rem] text-[1rem]">{homePageContent.bottom_section_para2}</span>
+                <div className="xl:mt-5 mt-5 xl:min-w-[240px] xl:max-w-[240px] lg:min-w-[230px] lg:max-w-[230px] md:min-w-[210px] md:max-w-[210px] min-w-[200px] max-w-[200px] flex"><Button link={'#'} text={homePageContent.bottom_section_cta2} /></div>
+              </div>
+            </div>
+          </div>
+          <div className="Image w-full xl:max-w-[42%] lg:max-w-[46%] z-20 xl:mt-0 lg:mt-0 md:mt-0 mt-5">
+            <Image src={'/images/home-page/globe.png'} width={500} height={500} className="w-full h-full" alt="globe" />
+          </div>
+        </div>
+      </div>
+      {/* Bottom Section END */}
     </div>
   );
 }

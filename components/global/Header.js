@@ -43,9 +43,12 @@ export default function Header() {
 
     return (
         <header
-            className={`fixed top-0 left-0 w-full z-[999999] transition-all duration-500 bg-transparent ${isSticky ? "backdrop-blur-[20px] shadow-md py-1" : "py-3"}`}
+            className={`fixed top-0 left-0 w-full z-[999999] transition-all duration-500 bg-transparent ${isSticky ? "shadow-md py-1" : "py-3"}`}
         >
-            <nav aria-label="Global" className="mx-auto flex gap-3 max-w-7xl items-center justify-between mt-5 mb-5 md:px-6 px-4 lg:px-4 xl:px-0 middle:px-5">
+            {isSticky &&
+                <div className='absolute backdrop-blur-[20px] w-full h-full top-0 left-0 z-10'></div>
+            }
+            <nav aria-label="Global" className="mx-auto flex gap-3 max-w-7xl items-center justify-between mt-5 mb-5 md:px-6 px-4 lg:px-4 xl:px-0 middle:px-5 z-20 relative">
                 <div className="flex lg:flex-1 w-full xl:min-h-[69px] lg:min-h-[62px] md:min-h-[50px] min-h-[44px]">
                     <Link href="/" className="bg-[#43E1A9] font-bold px-4 xl:text-3xl lg:text-lg py-2 lg:px-7 lg:py-1 xl:px-13 md:px-4 md:py-2 rounded-2xl text-white leading-0 flex justify-between items-center">
                         Logo
@@ -64,7 +67,7 @@ export default function Header() {
                         <Bars3Icon aria-hidden="true" className="size-8" />
                     </button>
                 </div>
-                <PopoverGroup className="hidden lg:flex lg:gap-x-5.5 border-[#43E1A9] border-1 rounded-2xl py-2 px-2 items-center bg-[url(/images/header-bg.png)] bg-contain">
+                <PopoverGroup className="hidden lg:flex xl:gap-x-5.5 lg:gap-x-4 border-[#43E1A9] border-1 rounded-2xl py-2 px-2 items-center bg-[url(/images/header-bg.png)] bg-contain">
                     {
                         navLinks.map((link) => {
                             const isActive = pathname === link.href;
@@ -72,31 +75,36 @@ export default function Header() {
                             if (link.subMenu) {
                                 return (
                                     <Popover key={link.name} className="relative item">
-                                        <PopoverButton className="flex px-2.5 py-2 items-center gap-x-1 xl:text-[1.375rem] lg:text-[1rem] font-bold text-[#FDFDFD] outline-0">
-                                            {link.name}
-                                            <ChevronDownIcon aria-hidden="true" className="size-7 flex-none text-[#FDFDFD]" />
-                                        </PopoverButton>
+                                        {({ close }) => (
+                                            <>
+                                                <PopoverButton className="flex px-2.5 py-2 items-center gap-x-1 xl:text-[1.375rem] lg:text-[1rem] font-bold text-[#FDFDFD] outline-0">
+                                                    {link.name}
+                                                    <ChevronDownIcon aria-hidden="true" className="size-7 flex-none text-[#FDFDFD]" />
+                                                </PopoverButton>
 
-                                        <PopoverPanel
-                                            transition
-                                            className="absolute left-1/2 z-10 mt-3 w-screen max-w-[100%] -translate-x-1/2 overflow-hidden rounded-xl shadow-lg transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in bg-[url(/images/header-bg.png)] bg-contain border-1 border-white backdrop-blur-[20px]"
-                                        >
-                                            <div className="p-2">
-                                                {link.subMenu.map((item) => (
-                                                    <div
-                                                        key={item.name}
-                                                        className="group relative flex items-center p-1 xl:text-[1.375rem] lg:text[1rem]"
-                                                    >
-                                                        <div className="flex-auto">
-                                                            <Link href={item.href} className="block font-bold text-white">
-                                                                {item.name}
-                                                                <span className="absolute inset-0" />
-                                                            </Link>
-                                                        </div>
+                                                <PopoverPanel
+                                                    transition
+                                                    className="absolute left-1/2 z-10 mt-3 w-screen max-w-[160%] -translate-x-1/2 overflow-hidden rounded-xl shadow-lg transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in bg-[url(/images/header-bg.png)] bg-contain border-1 border-white backdrop-blur-[20px]"
+                                                >
+                                                    <div className="p-2">
+                                                        {link.subMenu.map((item) => (
+                                                            <div
+                                                                key={item.name}
+                                                                className="group relative flex items-center p-1 xl:text-[1.375rem] lg:text[1rem]"
+                                                                onClick={() => { close() }}
+                                                            >
+                                                                <div className="flex-auto">
+                                                                    <Link href={item.href} className="block font-bold text-white">
+                                                                        {item.name}
+                                                                        <span className="absolute inset-0" />
+                                                                    </Link>
+                                                                </div>
+                                                            </div>
+                                                        ))}
                                                     </div>
-                                                ))}
-                                            </div>
-                                        </PopoverPanel>
+                                                </PopoverPanel>
+                                            </>
+                                        )}
                                     </Popover>
                                 );
                             }
@@ -118,17 +126,19 @@ export default function Header() {
                 </PopoverGroup>
                 <div className='hidden lg:block'><LanguageSelector customClass={'hidden lg:block'} /></div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <Link href="#" className="xl:text-[1.375rem] lg:text-[1rem] flex justify-center items-center font-bold text-[#fdfdfd] border-[#43E1A9] border-1 rounded-2xl lg:px-6 xl:px-6.5 py-4 bg-[url(/images/button-bg.png)] bg-cover bg-no-repeat lg:min-h-[62px] xl:min-h-[69px]">
-                        Log in
+                    <Link href="#" className="xl:text-[1.375rem] lg:text-[1rem] flex justify-center items-center font-bold text-[#fdfdfd] border-[#43E1A9] border-1 rounded-2xl lg:px-6 xl:px-6.5 py-4 bg-[url(/images/button-bg.png)] bg-cover bg-no-repeat lg:min-h-[62px] xl:min-h-[69px] xl:min-w-[169px] lg:min-w-[130px]">
+                        Login
                     </Link>
                 </div>
             </nav>
 
-            <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden border">
+            <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden border z-[9999999] relative">
                 <div className="fixed inset-0 z-50" />
-                <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto p-6 sm:max-w-full sm:ring-1 sm:ring-gray-900/10 bg-[url(/images/header-bg.png)] bg-contain border-1 border-white backdrop-blur-2xl">
+                <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto p-6 sm:max-w-full sm:ring-1 sm:ring-gray-900/10 bg-[url(/images/header-bg.png)] bg-contain border-1 border-white backdrop-blur-[20px]">
                     <div className="flex items-center justify-between">
-                        <Link href="/" className="bg-[#43E1A9] font-bold px-4 text-2xl py-6  rounded-2xl text-white leading-0 flex justify-between items-center">
+                        <Link href="/" className="bg-[#43E1A9] font-bold px-4 xl:text-3xl lg:text-lg py-[22px] lg:px-7 lg:py-1 xl:px-13 md:px-4 md:py-2 rounded-2xl text-white leading-0 flex justify-between items-center"
+                        onClick={() => setMobileMenuOpen(false)}
+                        >
                             Logo
                         </Link>
                         <button
@@ -162,6 +172,7 @@ export default function Header() {
                                                                 as="a"
                                                                 href={item.href}
                                                                 className="block rounded-lg py-2 pr-3 pl-6 text-[#FDFDFD] dark:text-white outline-0 text-[0.90rem] font-bold"
+                                                                onClick={() => setMobileMenuOpen(false)}
                                                             >
                                                                 {item.name}
                                                             </DisclosureButton>
@@ -175,6 +186,7 @@ export default function Header() {
                                             <Link
                                                 key={link.name}
                                                 href={link.href}
+                                                onClick={() => setMobileMenuOpen(false)}
                                                 className={`-mx-3 block xl:text-[1.375rem] lg:text-[1rem] font-bold px-2.5 py-2 text-[#FDFDFD] dark:text-white outline-0 ${isActive
                                                     ? "active"
                                                     : ""
@@ -191,6 +203,7 @@ export default function Header() {
                                 <Link
                                     href="#"
                                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white"
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Log in
                                 </Link>

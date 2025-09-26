@@ -6,19 +6,19 @@ export const navLinks = [
         name: 'Support',
         href: '#',
         subMenu: [
-            { name: 'Support 1', href: '#' },
-            { name: 'Support 2', href: '#' },
+            { name: 'Technical Support', href: '/features' },
+            { name: 'Billing Support', href: '#' },
         ],
     },
     {
         name: 'Resources',
         href: '#',
         subMenu: [
-            { name: 'Resources 1', href: '#' },
-            { name: 'Resources 2', href: '#' },
+            { name: 'Tutorial', href: '#' },
+            { name: 'Knowledge Base', href: '#' },
         ],
     },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Contact', href: '#' },
 ];
 
 export const footerSocialIcons = [

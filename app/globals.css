@@ -46,5 +46,8 @@ body:has(.home-page) {
   top: 0;
   margin: 0 auto;
   left: 0;
+}
 
+body {
+  overflow-x: hidden;
 }
