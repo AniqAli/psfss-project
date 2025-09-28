@@ -58,7 +58,7 @@ jobs:
       - name: Checkout manifest repository
         uses: actions/checkout@v4
         with:
-          repository: Aerialink-psfss/psfss-k8s-manifest
+          repository: git@github.com:Aerialink-psfss/psfss-k8s-manifest.git
           ssh-key: ${{ secrets.DEPLOY_KEY }}
           ref: main
 
@@ -84,7 +84,7 @@ jobs:
       - name: Checkout manifest repository
         uses: actions/checkout@v4
         with:
-          repository: Aerialink-psfss/psfss-k8s-manifest
+          repository: git@github.com:Aerialink-psfss/psfss-k8s-manifest.git
           ssh-key: ${{ secrets.DEPLOY_KEY }}
           ref: main
 
