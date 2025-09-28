@@ -95,3 +95,26 @@ export const footerQuickLinks = [
         link: '/faqs',
     },
 ];
+
+export const footerUseFullLinks = [
+    {
+        name: 'Terms of Service',
+        link: '#',
+    },
+    {
+        name: 'Privacy Policy',
+        link: '#',
+    },
+    {
+        name: 'Payment Policy',
+        link: '#',
+    },
+    {
+        name: 'Refund Policy',
+        link: '#',
+    },
+    {
+        name: 'Email us',
+        link: '#',
+    },
+];

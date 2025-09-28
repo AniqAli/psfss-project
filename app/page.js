@@ -1,5 +1,6 @@
 import Button from "@/components/global/Button";
 import GetStartedCards from "@/components/home/GetStartedCards";
+import PowerfullFeatures from "@/components/home/PowerfullFeatures";
 import HomeReviews from "@/components/home/Reviews";
 import Image from "next/image";
 
@@ -89,6 +90,7 @@ export default function Home() {
       {/* Powerfull Features Start */}
       <div className="powerfullFeatures xl:mt-15 lg:mt-14 md:mt-10 mt-10">
         <h2 className="text-[#fdfdfd] font-extrabold text-center m-auto xl:leading-[4.2rem] lg:leading-[4.2rem] md:leading-[3.2rem] leading-[2.2rem] xl:max-w-[45%] lg:max-w-[55%] md:max-w-[55%] max-w-[80%] xl:text-[4rem] lg:text-[4rem] md:text-[3rem] text-[1.9rem]">{homePageContent.powerfull_feature_heading}</h2>
+        <PowerfullFeatures />
       </div>
       {/* Powerfull Features End */}
 
