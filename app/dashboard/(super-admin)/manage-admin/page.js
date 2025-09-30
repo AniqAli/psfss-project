@@ -1,5 +1,5 @@
 export default function ManageAdmins() {
     return(
-        <>Manage Admin</>
+        <>Manage Admin 123</>
     );
 }
