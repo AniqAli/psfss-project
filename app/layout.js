@@ -2,10 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import "swiper/css";
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import Header from "@/components/global/Header";
-import Footer from "@/components/global/Footer";
-
+import 'swiper/css/navigation'; 
 
 const aptos = localFont({
   src: [
@@ -45,11 +42,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${aptos.variable} antialiased`}
       >
-        <Header />
-        <div className="max-w-7xl md:px-6 px-4 xl:px-0 m-auto xl:mt-35 lg:mt-32 mt-27">
-          {children}
-        </div>
-        <Footer />
+        {children}
       </body>
     </html>
   );

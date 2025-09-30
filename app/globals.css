@@ -41,6 +41,10 @@ body:has(.home-page) {
   background-attachment: fixed;
 }
 
+body:has(.authScreens) {
+  background-color: white;
+}
+
 .customFixed {
   position: fixed;
   top: 0;
