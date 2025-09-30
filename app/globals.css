@@ -45,6 +45,10 @@ body:has(.authScreens) {
   background-color: white;
 }
 
+body:has(.dashboard) {
+  background-color: white;
+}
+
 .customFixed {
   position: fixed;
   top: 0;
