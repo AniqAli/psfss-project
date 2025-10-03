@@ -1,9 +1,18 @@
 import Image from "next/image";
 import Button from "@/components/global/Button";
 import GetStartedCards from "@/components/home/GetStartedCards";
-import FeatureStepBox from "@/components/feature/FeatureStepBox";
+import CommitedSwiper from "@/components/feature/CommitedSwiper";
 
 export default function Features() {
+
+    const homePageReviews = [
+        { review: 'OHHHH Thanks god !!!! Finally there is someone making it for  me to use on my projects. Love ya', name: 'John Williams', rating: '4.5', avatar: '/icons/home-page/avatar.png' },
+        { review: 'OHHHH Thanks god !!!! Finally there is someone making it for  me to use on my projects. Love ya', name: 'John Williams', rating: '4', avatar: '/icons/home-page/avatar.png' },
+        { review: 'OHHHH Thanks god !!!! Finally there is someone making it for  me to use on my projects. Love ya', name: 'John Williams', rating: '5', avatar: '/icons/home-page/avatar.png' },
+        { review: 'OHHHH Thanks god !!!! Finally there is someone making it for  me to use on my projects. Love ya', name: 'John Williams', rating: '3.5', avatar: '/icons/home-page/avatar.png' },
+        { review: 'OHHHH Thanks god !!!! Finally there is someone making it for  me to use on my projects. Love ya', name: 'John Williams', rating: '4', avatar: '/icons/home-page/avatar.png' },
+        { review: 'OHHHH Thanks god !!!! Finally there is someone making it for  me to use on my projects. Love ya', name: 'John Williams', rating: '4.7', avatar: '/icons/home-page/avatar.png' },
+      ];
 
     const homePageContent = {
         banner_icon1: '/icons/home-page/banner-file.png',
@@ -111,7 +120,7 @@ export default function Features() {
                         {/* Step 1 */}
                         <div className="items-center">
                             {/* Box */}
-                            <div p-4 className="flex flex-col items-center justify-center p-4 border-l border-r border-t border-green-400 rounded-t-xl">
+                            <div className="flex flex-col items-center justify-center p-4 border-l border-r border-t border-green-400 rounded-t-xl">
                                 <Image
                                     src="/images/feature/feature_step1.png"
                                     width={650}
@@ -248,7 +257,7 @@ export default function Features() {
                 </div>
 
                 {/* Built for Privacy Section */}
-                <div className="bannerSection border-[#43E1A9] border-1 rounded-xl mt-[40px] lg:mt-[90px]">
+                <div className="border-[#43E1A9] border-1 rounded-xl mt-[40px] lg:mt-[90px]" style={{background: 'linear-gradient(120deg, rgba(65, 225, 169, 0) 30.84%, rgb(67, 225, 169) 230.92%)'}}>
                     <div className="flex lg:flex-row flex-col gap-5 lg:gap-0 p-7">
                         <div className="flex-1 banner_col1">
                             <h2 className="mainHeading text-[#FDFDFD] font-extrabold xl:leading-[4.25rem] lg:leading-[5rem] md:leading-[4rem] leading-[2rem] xl:text-[4rem] lg:text-[5.125rem] md:text-[4rem] xs:text-[1rem] text-[2rem]">
@@ -268,9 +277,7 @@ export default function Features() {
                                     <p className="align-middle">Full transparency on storage and access logs</p>
                                 </span>
                             </div>
-                            <span className="text-[#fffff] font-bold border-[#43E1A9] border-1 rounded-xl px-6 py-3 mt-5 xl:inline-block lg:inline-block md:inline-block hidden m-auto mt-1 lg:text-[1.2rem] md:text-[1.250rem] text-[1rem]">
-                                <p className="inline-block align-middle">We're committed to your security and <br/> satisfaction every step of the way.</p>
-                            </span>
+                            <CommitedSwiper/>
                         </div>
                         <div className="flex-1 banner_col1">
                             <Image
@@ -285,9 +292,11 @@ export default function Features() {
                 </div>
 
                 {/* Ready to take control section */}
-                <div className="bg-[#45E1AA] mt-[40px] lg:mt-[100px] mb-[40px] lg:mb-[100px] rounded-xl text-center relative">
-                    <div className="pt-[80px] pb-[30px] rounded-xl ml-[20px] mt-[-20px] blur-nano" style={{background: 'linear-gradient(136.71deg, rgba(67, 67, 67, 0.86) -24.05%, rgba(0, 0, 0, 0) 115.5%)', 
-                            backdropFilter: 'blur(57.76389694213867px)'}}>
+                <div className="mt-[40px] lg:mt-[100px] mb-[40px] lg:mb-[100px]">
+                    <div className="bg-[#45E1AA] h-[288px] rounded-xl text-center relative">
+                    </div>
+                    <div className="text-center pt-[80px] pb-[30px] rounded-xl ml-[20px] mr-[-20px] mt-[-320px] blur-nano" style={{background: 'linear-gradient(136.71deg, rgba(67, 67, 67, 0.86) -24.05%, rgba(0, 0, 0, 0) 115.5%)', 
+                            backdropFilter: 'blur(12.76389694213867px)'}}>
                         <h2 className="mainHeading text-[#FDFDFD] font-extrabold xl:leading-[4.25rem] lg:leading-[5rem] md:leading-[4rem] leading-[2rem] xl:text-[4rem] lg:text-[5.125rem] md:text-[4rem] xs:text-[1rem] text-[2rem]">
                             Ready to take control?
                         </h2>

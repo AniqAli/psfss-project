@@ -43,7 +43,7 @@ export default function HomeReviews({ reviews }) {
                 0: { slidesPerView: 1.5 },
             }}
         >
-            {reviews.map((review, index) => (
+            {(reviews ?? []).map((review, index) => (
                 <SwiperSlide
                     key={index}
                     className="cursor-grab select-none flex flex-col bg-[url(/images/footer-bg.png)] bg-cover bg-no-repeat z-20 rounded-2xl backdrop-blur-lg"

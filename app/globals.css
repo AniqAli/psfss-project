@@ -59,3 +59,43 @@ body:has(.dashboard) {
 body {
   overflow-x: hidden;
 }
+
+/* CSS Code */
+.swiper-wrapper {
+  width: 100%;
+  height: max-content !important;
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+  position: relative;
+}
+/* Ensure swiper-container takes the full width */
+.swiper-container {
+  width: 100%;  /* Make the swiper container fill its parent */
+  height: auto;  /* Adjust height based on content */
+  overflow: hidden;
+}
+
+/* Ensure swiper-slide fills the width of the container */
+.swiper-slide {
+  width: 100%;  /* Make the slide fill the entire container */
+  display: flex;  /* Align the content inside */
+  justify-content: center;
+  align-items: center;
+}
+/* Custom pagination bullet styling */
+.swiper-pagination {
+  background-color: #fff; /* Your desired dot color */
+  width: 12px; /* Set the size of the dot */
+  height: 12px; /* Set the size of the dot */
+  border-radius: 50%; /* Makes the dot round */
+}
+
+/* Optional: Add hover effect to change dot color when hovering */
+.swiper-pagination:hover {
+  background-color: #fff; /* Change color on hover */
+}
+
+/* Optional: Style the active pagination bullet */
+.swiper-pagination-bullet-active {
+  background-color: #f59e0b; /* Active dot color */
+}
