@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "@/components/global/Button";
 import GetStartedCards from "@/components/home/GetStartedCards";
+import FeatureStepBox from "@/components/feature/FeatureStepBox";
 
 export default function Features() {
 
@@ -44,19 +45,19 @@ export default function Features() {
                 {/* Banner Section */}
                 <div className="bannerSection">
                     <div className="flex lg:flex-row flex-col gap-5 lg:gap-4 py-7">
-                        <div className="flex-1 banner_col1">
+                        <div className="grow banner_col1">
                             <h1 className="mainHeading text-[#FDFDFD] font-extrabold xl:leading-[4.25rem] lg:leading-[5rem] md:leading-[4rem] leading-[2rem] xl:text-[4rem] lg:text-[5.125rem] md:text-[4rem] xs:text-[1rem] text-[2rem]">
-                                Built for Privacy. Total Control. Complete Peace of Mind.
+                                Built for Privacy. <br/>Total Control. Complete Peace of Mind.
                             </h1>
                             <span className="text-[#FDFDFD] font-bold xl:inline-block lg:inline-block md:inline-block hidden m-auto mt-4 xl:text-3xl lg:text-[1.750rem] md:text-[1.250rem] text-[1rem]">
-                                <p className="inline-block align-middle">Choose where your files go, who sees them, and how they are stored – all in a secure, private environment.</p>
+                                <p className="inline-block align-middle">Choose where your files go, who sees them, and how <br/> they are stored – all in a secure, private environment.</p>
                             </span>
                             <div className="flex items-center lg:gap-15 md:gap-10 gap-5 xl:mt-5 lg:mt-5 md:mt-3 mt-5">
                                 <div className="xl:min-w-[240px] xl:max-w-[240px] lg:min-w-[230px] lg:max-w-[230px] md:min-w-[210px] md:max-w-[210px] w-auto flex "><Button link={'#'} text={homePageContent.banner_button1} /></div>
                                 <div className="xl:min-w-[240px] xl:max-w-[240px] lg:min-w-[230px] lg:max-w-[230px] md:min-w-[210px] md:max-w-[210px] w-auto flex"><Button link={'#'} text={homePageContent.banner_button2} /></div>
                             </div>
                         </div>
-                        <div className="flex-1 banner_col1">
+                        <div className="grow banner_col1">
                             <Image
                                 src="/images/feature/hero-img.png"
                                 width={650}
@@ -106,56 +107,74 @@ export default function Features() {
 
                 {/* Steps Section */}
                 <div className="bannerSection py-7">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-0 lg:mt-[50px]">
-                        <div className="step">
-                            <Image
-                                src="/images/feature/feature_step1.png"
-                                width={650}
-                                height={500}
-                                alt="Feature Banner Img"
-                                className="block align-middle ml-auto"
-                            />
-                            <h2 className="mainHeading text-center text-[#43E1A9] mt-[15px] lg:mt-[30px] font-extrabold xl:leading-[4.25rem] lg:leading-[5rem] md:leading-[4rem] leading-[2rem] xl:text-[4rem] lg:text-[5.125rem] md:text-[4rem] xs:text-[1rem] text-[2rem]">
-                                Step 01
-                            </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-0 lg:mt-[50px]">
+                        {/* Step 1 */}
+                        <div className="items-center">
+                            {/* Box */}
+                            <div p-4 className="flex flex-col items-center justify-center p-4 border-l border-r border-t border-green-400 rounded-t-xl">
+                                <Image
+                                    src="/images/feature/feature_step1.png"
+                                    width={650}
+                                    height={500}
+                                    alt="step 1"
+                                    className="block align-middle"
+                                />
+                                {/* Step Label */}
+                                <h3 className="mainHeading text-center text-[#43E1A9] mt-[15px] lg:mt-[30px] font-extrabold xl:leading-[4.25rem] lg:leading-[5rem] md:leading-[4rem] leading-[2rem] xl:text-[4rem] lg:text-[5.125rem] md:text-[4rem] xs:text-[1rem] text-[2rem]">
+                                    Step 01
+                                </h3>
+                            </div>
                         </div>
-                        <div className="step">
-                            <h2 className="mainHeading text-center text-[#43E1A9] mt-4 font-extrabold xl:leading-[4.25rem] lg:leading-[5rem] md:leading-[4rem] leading-[2rem] xl:text-[4rem] lg:text-[5.125rem] md:text-[4rem] xs:text-[1rem] text-[2rem]">
-                                Step 02
-                            </h2>
-                            <Image
-                                src="/images/feature/feature_step2.png"
-                                width={650}
-                                height={500}
-                                alt="Feature Banner Img"
-                                className="block align-middle mt-[15px] lg:mt-[30px]"
-                            />
+
+                        {/* Step 2 */}
+                        <div className="items-center">
+                            <div className="flex flex-col items-center justify-center pt-4 px-4 border-r border-b border-green-400 rounded-b-xl">
+                                <h3 className="mainHeading text-center text-[#43E1A9] font-extrabold xl:leading-[4.25rem] lg:leading-[5rem] md:leading-[4rem] leading-[2rem] xl:text-[4rem] lg:text-[5.125rem] md:text-[4rem] xs:text-[1rem] text-[2rem]">
+                                    Step 02
+                                </h3>
+                                <Image
+                                    src="/images/feature/feature_step2.png"
+                                    width={650}
+                                    height={500}
+                                    alt="step 1"
+                                    className="block align-middle mt-[15px] lg:mt-[30px]"
+                                />
+                            </div>
                         </div>
-                        <div className="step">
-                            <Image
-                                src="/images/feature/feature_step3.png"
-                                width={650}
-                                height={500}
-                                alt="Feature Banner Img"
-                                className="block align-middle ml-auto"
-                            />
-                            <h2 className="mainHeading text-center text-[#43E1A9] mt-[15px] lg:mt-[30px] font-extrabold xl:leading-[4.25rem] lg:leading-[5rem] md:leading-[4rem] leading-[2rem] xl:text-[4rem] lg:text-[5.125rem] md:text-[4rem] xs:text-[1rem] text-[2rem]">
-                                Step 03
-                            </h2>
+
+                        {/* Step 3 */}
+                        <div className="items-center">
+                            <div className="flex flex-col items-center justify-center p-4 border-r border-t border-green-400 rounded-t-xl">
+                                <Image
+                                    src="/images/feature/feature_step3.png"
+                                    width={650}
+                                    height={500}
+                                    alt="step 1"
+                                    className="block align-middle"
+                                />
+                                <h3 className="mainHeading text-center text-[#43E1A9] mt-[15px] lg:mt-[30px] font-extrabold xl:leading-[4.25rem] lg:leading-[5rem] md:leading-[4rem] leading-[2rem] xl:text-[4rem] lg:text-[5.125rem] md:text-[4rem] xs:text-[1rem] text-[2rem]">
+                                    Step 03
+                                </h3>
+                            </div>
                         </div>
-                        <div className="step">
-                            <h2 className="mainHeading text-center text-[#43E1A9] mt-4 font-extrabold xl:leading-[4.25rem] lg:leading-[5rem] md:leading-[4rem] leading-[2rem] xl:text-[4rem] lg:text-[5.125rem] md:text-[4rem] xs:text-[1rem] text-[2rem]">
-                                Step 04
-                            </h2>
-                            <Image
-                                src="/images/feature/feature_step4.png"
-                                width={650}
-                                height={500}
-                                alt="Feature Banner Img"
-                                className="block align-middle mt-[15px] lg:mt-[30px]"
-                            />
+
+                        {/* Step 4 (no connector after) */}
+                        <div className="items-center">
+                            <div className="flex flex-col items-center justify-center p-4 border-r border-b border-green-400 rounded-b-xl">
+                                <h3 className="mainHeading text-center text-[#43E1A9] font-extrabold xl:leading-[4.25rem] lg:leading-[5rem] md:leading-[4rem] leading-[2rem] xl:text-[4rem] lg:text-[5.125rem] md:text-[4rem] xs:text-[1rem] text-[2rem]">
+                                    Step 04
+                                </h3>
+                                <Image
+                                    src="/images/feature/feature_step4.png"
+                                    width={650}
+                                    height={500}
+                                    alt="step 1"
+                                    className="block align-middle mt-[15px] lg:mt-[30px]"
+                                />
+                            </div>
                         </div>
                     </div>
+                    {/* <FeatureStepBox step="01" icon="/images/feature/feature_step1.png" /> */}
                 </div>
 
                 {/* shat you see section */}
@@ -173,6 +192,7 @@ export default function Features() {
                     <h3 className="mainHeading text-[#E6EDF5] mt-[40px] lg:mt-[70px] font-extrabold lg:leading-[2.8rem] leading-[2.2rem] lg:text-[2.5rem] xs:text-[1rem] text-[2rem]">
                         Sync only what you choose, where you choose.
                     </h3>
+                    {/* OS Images Grid */}
                     <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mt-[20px] lg:mt-[40px]">
                         <div className="p-5 border-[#43E1A9] border-1 rounded-xl">
                             <Image
@@ -192,7 +212,7 @@ export default function Features() {
                                 alt=""
                                 className="block align-middle mx-auto"
                             />
-                            <p className="inline-block align-middle mt-3 text-[1rem] lg:text-[1.5rem] text-[#E6EDF5] font-medium">Windows</p>
+                            <p className="inline-block align-middle mt-3 text-[1rem] lg:text-[1.5rem] text-[#E6EDF5] font-medium">Apple</p>
                         </div>
                         <div className="p-5 border-[#43E1A9] border-1 rounded-xl">
                             <Image
@@ -202,7 +222,7 @@ export default function Features() {
                                 alt=""
                                 className="block align-middle mx-auto"
                             />
-                            <p className="inline-block align-middle mt-3 text-[1rem] lg:text-[1.5rem] text-[#E6EDF5] font-medium">Windows</p>
+                            <p className="inline-block align-middle mt-3 text-[1rem] lg:text-[1.5rem] text-[#E6EDF5] font-medium">Android</p>
                         </div>
                         <div className="p-5 border-[#43E1A9] border-1 rounded-xl">
                             <Image
@@ -212,7 +232,7 @@ export default function Features() {
                                 alt=""
                                 className="block align-middle mx-auto mt-5"
                             />
-                            <p className="inline-block align-middle mt-5 text-[1rem] lg:text-[1.5rem] text-[#E6EDF5] font-medium">Windows</p>
+                            <p className="inline-block align-middle mt-5 text-[1rem] lg:text-[1.5rem] text-[#E6EDF5] font-medium">IOS</p>
                         </div>
                         <div className="p-5 border-[#43E1A9] border-1 rounded-xl">
                             <Image
@@ -222,7 +242,7 @@ export default function Features() {
                                 alt=""
                                 className="block align-middle mx-auto"
                             />
-                            <p className="inline-block align-middle mt-3 text-[1rem] lg:text-[1.5rem] text-[#E6EDF5] font-medium">Windows</p>
+                            <p className="inline-block align-middle mt-3 text-[1rem] lg:text-[1.5rem] text-[#E6EDF5] font-medium">Linux</p>
                         </div>
                     </div>
                 </div>
