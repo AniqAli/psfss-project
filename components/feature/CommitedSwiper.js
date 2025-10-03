@@ -1,19 +1,25 @@
 'use client'; // Mark the component as a client component
 import { useEffect } from 'react';
 import Image from 'next/image';
-
+import { Autoplay } from 'swiper/modules';
+import SwiperCore from 'swiper';
 // Import Swiper styles
 // import 'swiper/swiper-bundle.min.css';
 
 export default function CommitedSwiper() {
 
   useEffect(() => {
+    SwiperCore.use([Autoplay]);
     // Dynamically load Swiper after the component mounts
     const Swiper = require('swiper').default;
 
     // Initialize Swiper with options
     new Swiper('.default-carousel', {
       loop: true, // Enable looping
+      autoplay: {
+        delay: 2000, // Delay between transitions (in ms)
+        disableOnInteraction: false, // Continue autoplay after user interactions
+      },
       pagination: {
         el: '.commited_swiper .swiper-pagination', // Pagination dots
         clickable: true,
