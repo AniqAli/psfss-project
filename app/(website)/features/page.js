@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "@/components/global/Button";
-import GetStartedCards from "@/components/home/GetStartedCards";
+import ButtonTransparent from "@/components/global/ButtonTransparent";
+import FeatureHighCard from "@/components/home/FeatureHighCard";
 import CommitedSwiper from "@/components/feature/CommitedSwiper";
 
 export default function Features() {
@@ -38,14 +39,6 @@ export default function Features() {
         get_started_card_6_icon: '/icons/conf_private.svg',
         like_try_it_button: 'Try It',
         like_what_button: 'Try It Free',
-        why_choose_us_heading: 'Why Users Choose Us',
-        why_choose_us_para: 'Trusted by users who value privacy, security and simplicity',
-        bottom_section_heading1: 'Love the free version?',
-        bottom_section_para1: 'You\'ll love Premium even more. More features. More freedom.',
-        bottom_section_cta1: 'See What Premium Offers',
-        bottom_section_heading2: 'Want total control and complete privacy?',
-        bottom_section_para2: 'You\'re in the right place, we don\'t sell your personal data.',
-        bottom_section_cta2: 'Start for Free',
     };
 
     return(
@@ -62,8 +55,8 @@ export default function Features() {
                                 <p className="inline-block align-middle">Choose where your files go, who sees them, and how <br/> they are stored – all in a secure, private environment.</p>
                             </span>
                             <div className="flex items-center lg:gap-15 md:gap-10 gap-5 xl:mt-5 lg:mt-5 md:mt-3 mt-5">
-                                <div className="xl:min-w-[240px] xl:max-w-[240px] lg:min-w-[230px] lg:max-w-[230px] md:min-w-[210px] md:max-w-[210px] w-auto flex "><Button link={'#'} text={homePageContent.banner_button1} /></div>
-                                <div className="xl:min-w-[240px] xl:max-w-[240px] lg:min-w-[230px] lg:max-w-[230px] md:min-w-[210px] md:max-w-[210px] w-auto flex"><Button link={'#'} text={homePageContent.banner_button2} /></div>
+                                <div className="xl:min-w-[240px] xl:max-w-[240px] lg:min-w-[230px] lg:max-w-[230px] md:min-w-[210px] md:max-w-[210px] w-auto flex "><ButtonTransparent link={'#'} text={homePageContent.banner_button1} /></div>
+                                <div className="xl:min-w-[240px] xl:max-w-[240px] lg:min-w-[230px] lg:max-w-[230px] md:min-w-[210px] md:max-w-[210px] w-auto flex"><ButtonTransparent link={'#'} text={homePageContent.banner_button2} /></div>
                             </div>
                         </div>
                         <div className="grow banner_col1">
@@ -85,29 +78,29 @@ export default function Features() {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-5 mt-[50px]">
                         <div className="flex-1">
-                            <GetStartedCards heading={homePageContent.get_started_card_1_heading} text={homePageContent.get_started_card_1_text} icon={homePageContent.get_started_card_1_icon} />
+                            <FeatureHighCard heading={homePageContent.get_started_card_1_heading} text={homePageContent.get_started_card_1_text} icon={homePageContent.get_started_card_1_icon} />
                         </div>
                         <div className="flex-1">
-                            <GetStartedCards heading={homePageContent.get_started_card_2_heading} text={homePageContent.get_started_card_2_text} icon={homePageContent.get_started_card_2_icon} />
+                            <FeatureHighCard heading={homePageContent.get_started_card_2_heading} text={homePageContent.get_started_card_2_text} icon={homePageContent.get_started_card_2_icon} />
                         </div>
                         <div className="flex-1">
-                            <GetStartedCards heading={homePageContent.get_started_card_3_heading} text={homePageContent.get_started_card_3_text} icon={homePageContent.get_started_card_3_icon} />
+                            <FeatureHighCard heading={homePageContent.get_started_card_3_heading} text={homePageContent.get_started_card_3_text} icon={homePageContent.get_started_card_3_icon} />
                         </div>
                         <div className="flex-1">
-                            <GetStartedCards heading={homePageContent.get_started_card_4_heading} text={homePageContent.get_started_card_4_text} icon={homePageContent.get_started_card_4_icon} />
+                            <FeatureHighCard heading={homePageContent.get_started_card_4_heading} text={homePageContent.get_started_card_4_text} icon={homePageContent.get_started_card_4_icon} />
                         </div>
                         <div className="flex-1">
-                            <GetStartedCards heading={homePageContent.get_started_card_5_heading} text={homePageContent.get_started_card_5_text} icon={homePageContent.get_started_card_5_icon} />
+                            <FeatureHighCard heading={homePageContent.get_started_card_5_heading} text={homePageContent.get_started_card_5_text} icon={homePageContent.get_started_card_5_icon} />
                         </div>
                         <div className="flex-1">
-                            <GetStartedCards heading={homePageContent.get_started_card_6_heading} text={homePageContent.get_started_card_6_text} icon={homePageContent.get_started_card_6_icon} />
+                            <FeatureHighCard heading={homePageContent.get_started_card_6_heading} text={homePageContent.get_started_card_6_text} icon={homePageContent.get_started_card_6_icon} />
                         </div>
                     </div>
                     <div className="mt-[50px] flex flex-wrap gap-4 lg:gap-6 items-center">
                         <h2 className="mainHeading text-center text-[#FDFDFD] font-extrabold xl:leading-[4.25rem] lg:leading-[5rem] md:leading-[4rem] leading-[2rem] xl:text-[4rem] lg:text-[5.125rem] md:text-[4rem] xs:text-[1rem] text-[2rem]">
                             Like it?
                         </h2>
-                        <div className="max-h-[56px] min-w-[110px] max-w-[110px] md:min-w-[210px] md:max-w-[210px] flex"><Button link={'#'} text={homePageContent.like_try_it_button} /></div>
+                        <div className="max-h-[56px] min-w-[110px] max-w-[110px] md:min-w-[210px] md:max-w-[210px] flex"><ButtonTransparent link={'#'} text={homePageContent.like_try_it_button} /></div>
                         <h2 className="mainHeading text-center text-[#43E1A9] font-extrabold xl:leading-[4.25rem] lg:leading-[5rem] md:leading-[4rem] leading-[2rem] xl:text-[4rem] lg:text-[5.125rem] md:text-[4rem] xs:text-[1rem] text-[2rem]">
                             It’s Free !
                         </h2>
@@ -304,7 +297,7 @@ export default function Features() {
                             <p className="inline-block align-middle">Your files. Your rules.</p>
                         </span>
                         <div className="flex justify-center mt-6">
-                            <div className="max-h-[56px] min-w-[110px] max-w-[110px] md:min-w-[210px] md:max-w-[210px] flex"><Button link={'#'} text={homePageContent.like_what_button} /></div>
+                            <div className="max-h-[56px] min-w-[110px] max-w-[110px] md:min-w-[210px] md:max-w-[210px] flex"><ButtonTransparent link={'#'} text={homePageContent.like_what_button} /></div>
                         </div>
 
                         <Image
